@@ -13,7 +13,7 @@ module OmniAuth
       }
 
       option :callback_url
-      
+
       option :provider_ignores_state, true
       option :myshopify_domain, 'myshopify.com'
 
@@ -38,6 +38,10 @@ module OmniAuth
         else
           fail!(:invalid_site)
         end
+      end
+
+      def callback_phase
+        super
       end
 
       def authorize_params
